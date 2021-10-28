@@ -1,0 +1,13 @@
+
+-- Query 1
+
+SELECT id,score from stack_data ORDER BY score DESC LIMIT 10;
+
+-- Query 2
+
+SELECT OwnerUserId, sum(score) AS total_score FROM stack_data GROUP BY OwnerUserId ORDER BY total_score DESC LIMIT 10;
+
+-- Query 3
+
+SELECT COUNT(DISTINCT OwnerUserId) from stack_data WHERE OwnerUserId IS NOT NULL AND BODY LIKE ’% cloud %’ OR BODY LIKE ’% Cloud %’;
+
