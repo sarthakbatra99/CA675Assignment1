@@ -25,5 +25,5 @@ final_stackdata = FOREACH filtered_stackdata GENERATE Id,Score,OwnerUserId,ViewC
 -- Storing the final cleaned data back into Hadoop
 -- Data is stored in a directory named fin
 
-STORE final_stackdata INTO 'hdfs:///fin' USING org.apache.pig.piggybank.storage.CSVExcelStorage('|', 'YES_MULTILINE', 'NOCHANGE');
+STORE final_stackdata INTO 'hdfs:///fin' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',', 'YES_MULTILINE', 'NOCHANGE');
 
