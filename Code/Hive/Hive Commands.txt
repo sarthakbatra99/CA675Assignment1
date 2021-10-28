@@ -1,13 +1,13 @@
 
--- Query 1
+-- Query 1 ( Top 10 posts by scores)
 
 SELECT id,score from stack_data ORDER BY score DESC LIMIT 10;
 
--- Query 2
+-- Query 2 ( Top 10 users by post scores)
 
 SELECT OwnerUserId, sum(score) AS total_score FROM stack_data GROUP BY OwnerUserId ORDER BY total_score DESC LIMIT 10;
 
--- Query 3
+-- Query 3 ( Number of distinct users with the word cloud in one of their posts
 
-SELECT COUNT(DISTINCT OwnerUserId) from stack_data WHERE OwnerUserId IS NOT NULL AND BODY LIKE ’% cloud %’ OR BODY LIKE ’% Cloud %’;
+SELECT COUNT(DISTINCT OwnerUserId) from stack_data WHERE OwnerUserId IS NOT NULL AND body LIKE ’% cloud %’ OR body LIKE ’% Cloud %’;
 
