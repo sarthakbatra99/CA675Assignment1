@@ -1,0 +1,15 @@
+-- The commands used to Extract Stack Exchange Data(total of 5 files)
+
+select top 50000 * from posts where posts.ViewCount $>$ 130000 ORDER BY posts.ViewCount (got a total of 48720 records)
+
+select top 50000 * from posts where posts.ViewCount $<=$ 130000 
+AND posts.ViewCount $>$ 80000 ORDER BY posts.ViewCount (got a total of 43227 records)
+
+select top 50000 * from posts where posts.ViewCount $<=$ 80000 
+AND posts.ViewCount $>$ 60000 ORDER BY posts.ViewCount (got a total of 38555 records)
+
+select top 50000 * from posts where posts.ViewCount $<=$ 60000 
+AND posts.ViewCount $>$ 46750 ORDER BY posts.ViewCount (got a total of 44117 records)
+
+select top 25381 * from posts where posts.ViewCount $<=$ 46750 
+AND posts.ViewCount $>$ 41000 ORDER BY posts.ViewCount (got the remaining 25381 records)
